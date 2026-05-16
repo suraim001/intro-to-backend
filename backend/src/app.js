@@ -5,11 +5,14 @@ const app = express(); // Create an express app.
 app.use(express.json());
 
 // router import
-import router from "./routes/user.route.js";
+import userRouter from "./routes/user.route.js";
+import postRouter from "./routes/post.route.js";
+
 // import postRouter from "./routes/post.route.js";
 
-//router declaration
-app.use("/api/v1/users", router);
+//routes declaration
+app.use("/api/v1/users", userRouter);
+app.use("/api/v1/posts", postRouter);
 
 //example route: http://localhost:4000/api/v1/users/register
 
